@@ -21,14 +21,18 @@ class Node:
 		self.next = None
 def getNthFromLast(head,n):
     #code here
-    nums=[]
-    while head:
-        nums.append(head.data)
-        head=head.next
-    if len(nums)<n:
+    first_pointer=head
+    second_pointer=head
+    if not head or n<=0:
         return -1
-    nums2=nums[::-1]
-    return nums2[n-1]
+    for i in range(n):
+        if first_pointer is None:
+            return -1
+        first_pointer=first_pointer.next
+    while first_pointer:
+        first_pointer=first_pointer.next
+        second_pointer=second_pointer.next
+    return second_pointer.data
     
     
     
