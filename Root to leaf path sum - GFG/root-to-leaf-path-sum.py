@@ -15,18 +15,16 @@ class Solution:
         :return: true or false
         '''
         # code here
-        if not root:
-            return False
-        stack=[(root,root.data)]
-        while stack:
-            node,currSum=stack.pop()
-            if not node.left and not node.right and currSum==S:
-                return True
-            if node.left:
-                stack.append((node.left,currSum+node.left.data))
-            if node.right:
-                stack.append((node.right,currSum+node.right.data))
-        return False
+        def dfs(node,currSum):
+            if not node:
+                return False
+            currSum+=node.data
+            if not node.left and not node.right:
+                return currSum==S
+            
+            return(dfs(node.left,currSum) or
+                    dfs(node.right,currSum))
+        return dfs(root,0)
             
             
 
