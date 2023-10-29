@@ -6,12 +6,15 @@
 #         self.right = right
 class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
-        if root is None:
+        if not root:
             return 0
-        leftDepth=self.minDepth(root.left)
-        rightDepth=self.minDepth(root.right)
-        if leftDepth==0:
-            return 1+rightDepth
-        if rightDepth==0:
-            return 1+leftDepth
-        return 1+min(leftDepth,rightDepth)
+        stack=[[root,1]]
+        res=sys.maxsize
+        while stack:
+            node,depth=stack.pop()
+            if node:
+                if not node.left and not node.right:
+                    res=min(res,depth)
+                stack.append([node.left,depth+1])
+                stack.append([node.right,depth+1])
+        return res
