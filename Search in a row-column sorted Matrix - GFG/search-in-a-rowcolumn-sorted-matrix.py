@@ -11,13 +11,13 @@ class Solution:
     	while row<n and col>=0:
     	    if mat[row][col]<x:
     	        row+=1
-    	    elif col==0 and mat[row][col]==x:
+    	    elif col==0 and mat[row][col]!=x:
     	        return 1
     	    elif mat[row][col]>x:
     	        col-=1
     	    else:
     	        return 1
-        return 0   
+         
     	        
     	
 
