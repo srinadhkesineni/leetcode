@@ -12,7 +12,7 @@ class Solution:
     	    if mat[row][col]<x:
     	        row+=1
     	    elif col==0 and mat[row][col]!=x:
-    	        return 1
+    	        return 0
     	    elif mat[row][col]>x:
     	        col-=1
     	    else:
