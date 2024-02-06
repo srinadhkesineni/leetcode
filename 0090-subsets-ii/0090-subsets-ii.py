@@ -11,8 +11,7 @@ class Solution(object):
         ds=[]
         def func(idx,arr,ds):
             if idx==len(arr):
-                if ds not in total:
-                    total.append(ds[:])
+                total.append(ds[:])
                 return
             ds.append(arr[idx])
             func(idx+1,arr,ds)
