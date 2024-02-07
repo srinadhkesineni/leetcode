@@ -10,4 +10,4 @@ class Solution:
 
         for i in sorted(dic.items(), key=lambda x:x[1]):
             st+=i[1]*i[0]
-        return st[::-1]            
+        return st[::-1] 
