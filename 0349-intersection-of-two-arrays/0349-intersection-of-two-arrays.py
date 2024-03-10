@@ -13,3 +13,4 @@ class Solution:
             if i in d:
                 l.append(i)
         return l
+        
