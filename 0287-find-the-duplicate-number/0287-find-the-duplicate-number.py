@@ -6,9 +6,3 @@ class Solution:
                 return i
             else:
                 d[i]=1
-        # for value in d:
-        #     if value >1:
-        #         return value
-        
-
-        
